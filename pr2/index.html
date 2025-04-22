@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BistroFood</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .banner {
+            background-image: url('photo/index2.jpg');
+            background-size: cover;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgb(255, 255, 255);
+            text-align: center;
+        }
+
+        .banner-text {
+            font-size: 70px;
+            padding: 5px 15px;
+            border-radius: 30px;
+            background-color: rgba(0, 0, 0, 0.562);
+        }
+
+        .promo {
+            background-color: #f8f9fa;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .about-section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .about-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .feature-card {
+            background-color: #e9ecef;
+            padding: 20px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 300px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-card i {
+            font-size: 2rem;
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+
+        .promo h2 {
+            font-size: 2.5rem;
+            color: #4CAF50;
+        }
+
+        .promo p {
+            font-size: 1.2rem;
+            color: #555;
+        }
+
+        @media (max-width: 768px) {
+            .banner-text {
+                font-size: 40px;
+            }
+
+            .promo h2 {
+                font-size: 2rem;
+            }
+
+            .promo p {
+                font-size: 1rem;
+            }
+
+            .feature-card {
+                width: 100%;
+                max-width: none;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .banner {
+                height: 400px;
+            }
+
+            .banner-text {
+                font-size: 30px;
+            }
+
+            .promo h2 {
+                font-size: 1.5rem;
+            }
+
+            .promo p {
+                font-size: 0.9rem;
+            }
+
+            .btn-lg {
+                font-size: 1rem;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">BistroFood</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+                    <li class="nav-item"><a class="nav-link" href="menu.html">Меню</a></li>
+                    <li class="nav-item"><a class="nav-link" href="register.html">Регистрация</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="banner">
+        <div class="banner-text">
+            <h1>Добро пожаловать в BistroFood</h1>
+            <p>Здоровая пища и экологичность в центре города</p>
+        </div>
+    </div>
+
+    <div class="about-section">
+        <h2>О нас</h2>
+        <p>BistroFood — это современное уютное кафе с фокусом на здоровое питание и быстрое обслуживание. В нашем меню
+            представлены блюда европейской и азиатской кухни, приготовленные из свежих ингредиентов.</p>
+        <img src="photo/index.jpg" alt="Интерьер ресторана">
+    </div>
+
+    <div class="container mt-5">
+        <h2 class="text-center mb-5">Почему выбирают нас?</h2>
+        <div class="features">
+            <div class="feature-card">
+                <i class="bi bi-leaf"></i>
+                <h5>Экологичность</h5>
+                <p>Мы используем только экологически чистые продукты и биоразлагаемую упаковку.</p>
+            </div>
+            <div class="feature-card">
+                <i class="bi bi-truck"></i>
+                <h5>Быстрая доставка</h5>
+                <p>Гарантируем быструю доставку в любую точку города.</p>
+            </div>
+            <div class="feature-card">
+                <i class="bi bi-heart"></i>
+                <h5>Забота о вас</h5>
+                <p>Наши блюда готовятся с любовью и заботой о вашем здоровье.</p>
+            </div>
+            <div class="feature-card">
+                <i class="bi bi-palette"></i>
+                <h5>Уникальная атмосфера</h5>
+                <p>Современный дизайн и элементы городского искусства создают особую атмосферу.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="promo">
+        <h2>Скидка 15% на все заказы через сайт!</h2>
+        <p>Зарегистрируйтесь прямо сейчас и получите бонус!</p>
+        <a href="register.html" class="btn btn-success btn-lg">Зарегистрироваться</a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.min.js"></script>
+</body>
+
+</html>

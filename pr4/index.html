@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новогодняя открытка</title>  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: url('photo/back.png') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        .timer-container {
+            background: rgba(0, 0, 0, 0.7);
+            border: 2px solid #ffcc00;
+            color: #ffcc00;
+            margin: 0 auto;
+            max-width: 800px;
+        }
+
+        .timer-item {
+            position: relative;
+            padding: 20px;
+        }
+
+        .timer-item span {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #ffcc00;
+            text-shadow: 0 0 10px #fff;
+        }
+
+        .gift-container {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .gift-container:hover {
+            transform: scale(1.1);
+        }
+
+        .gift-img {
+            width: 100%;
+            height: auto;
+            transition: opacity 0.3s ease;
+        }
+
+        .gift-img.opened {
+            opacity: 0.5;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="text-center mt-5">
+        <h1 class="display-3 text-white fw-bold">С Новым годом 2025!</h1>
+    </header>
+
+    <section class="container text-center my-5">
+        <div id="timer" class="timer-container p-4 rounded shadow-lg">
+            <div class="row">
+                <div class="col timer-item">
+                    <span id="days" class="display-4">00</span>
+                    <p class="text-white">Дней</p>
+                </div>
+                <div class="col timer-item">
+                    <span id="hours" class="display-4">00</span>
+                    <p class="text-white">Часов</p>
+                </div>
+                <div class="col timer-item">
+                    <span id="minutes" class="display-4">00</span>
+                    <p class="text-white">Минут</p>
+                </div>
+                <div class="col timer-item">
+                    <span id="seconds" class="display-4">00</span>
+                    <p class="text-white">Секунд</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container text-center">
+        <div class="row justify-content-center mb-5">
+            <div class="col-md-4 gift-container">
+                <img src="photo/1.png" alt="Подарок" class="gift-img" onclick="openGift(this)">
+            </div>
+            <div class="col-md-4 gift-container">
+                <img src="photo/2.png" alt="Подарок" class="gift-img" onclick="openGift(this)">
+            </div>
+        </div>
+
+        <button class="btn btn-primary btn-lg" onclick="changeBackground()">Изменить фон</button>
+    </section>
+
+    <script>
+        function updateTimer() {
+            const newYear = new Date("January 1, 2026 00:00:00").getTime();
+            const now = new Date().getTime();
+            const distance = newYear - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = String(days).padStart(2, "0");
+            document.getElementById("hours").innerText = String(hours).padStart(2, "0");
+            document.getElementById("minutes").innerText = String(minutes).padStart(2, "0");
+            document.getElementById("seconds").innerText = String(seconds).padStart(2, "0");
+        }
+
+        setInterval(updateTimer, 1000);
+        updateTimer();
+
+        function openGift(element) {
+            element.classList.add("opened");
+            alert("Сюрприз! С Новым годом!");
+        }
+
+        function changeBackground() {
+            const backgrounds = [
+                "photo/back2.jpeg",
+                "photo/back3.jpeg",
+                "photo/back4.jpeg"
+            ];
+            const randomIndex = Math.floor(Math.random() * backgrounds.length);
+            document.body.style.backgroundImage = `url('${backgrounds[randomIndex]}')`;
+        }
+
+        function createSnowflakes() {
+            const snowflakeCount = 300;
+            const snowflakeContainer = document.createElement('div');
+            snowflakeContainer.style.position = 'absolute';
+            snowflakeContainer.style.top = '0';
+            snowflakeContainer.style.left = '0';
+            snowflakeContainer.style.width = '100%';
+            snowflakeContainer.style.height = '100%';
+            snowflakeContainer.style.pointerEvents = 'none';
+            snowflakeContainer.style.zIndex = '1000';
+            document.body.appendChild(snowflakeContainer);
+
+            for (let i = 0; i < snowflakeCount; i++) {
+                const snowflake = document.createElement('div');
+                snowflake.textContent = '❅';
+                snowflake.style.position = 'absolute';
+                snowflake.style.fontSize = `${Math.random() * 20 + 10}px`;
+                snowflake.style.color = 'white';
+                snowflake.style.opacity = Math.random();
+                snowflake.style.left = `${Math.random() * 100}vw`;
+                snowflake.style.top = `${Math.random() * 100}vh`;
+                snowflake.style.animation = `fall ${Math.random() * 5 + 5}s linear infinite, sway ${Math.random() * 5 + 3}s ease-in-out infinite alternate`;
+                snowflakeContainer.appendChild(snowflake);
+            }
+        }
+
+        const styleSheet = document.createElement('style');
+        styleSheet.innerHTML = `
+            @keyframes fall {
+                to {
+                    transform: translateY(100vh);
+                }
+            }
+            @keyframes sway {
+                from {
+                    transform: translateY(-150px);
+                }
+                to {
+                    transform: translateY(150px);
+                }
+            }
+        `;
+        document.head.appendChild(styleSheet);
+
+        window.onload = createSnowflakes;
+    </script>
+</body>
+
+</html>

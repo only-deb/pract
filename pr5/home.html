@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная страница</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Кулинарное сообщество</a>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="home.html">Главная</a></li>
+                <li class="nav-item"><a class="nav-link" href="gallery.html">Галерея</a></li>
+                <li class="nav-item"><a class="nav-link" href="friends.html">Друзья</a></li>
+                <li class="nav-item"><a class="nav-link" href="recipes.html">Рецепты</a></li>
+                <li class="nav-item"><a class="nav-link" href="shop.html">Магазин</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h2>Добро пожаловать, <span id="username"></span>!</h2>
+        <p>Это кулинарное сообщество, где вы можете делиться рецептами, фотографиями и находить новых друзей.</p>
+    </div>
+
+    <script>
+        const currentUser = localStorage.getItem('currentUser');
+        document.getElementById('username').textContent = currentUser || 'Гость';
+
+        if (!currentUser) {
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>

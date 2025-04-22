@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Магазин</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+        .cart-container {
+            margin-top: 30px;
+        }
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Кулинарное сообщество</a>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="home.html">Главная</a></li>
+                <li class="nav-item"><a class="nav-link" href="gallery.html">Галерея</a></li>
+                <li class="nav-item"><a class="nav-link" href="friends.html">Друзья</a></li>
+                <li class="nav-item"><a class="nav-link" href="recipes.html">Рецепты</a></li>
+                <li class="nav-item"><a class="nav-link" href="shop.html">Магазин</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h2>Магазин кулинарных инструментов</h2>
+        <div class="row" id="products">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="photo/m1.jpg" class="card-img-top" alt="Нож шеф-повара">
+                    <div class="card-body">
+                        <h5 class="card-title">Нож шеф-повара</h5>
+                        <p class="card-text">Острый нож для профессионалов.</p>
+                        <button class="btn btn-primary add-to-cart" data-name="Нож шеф-повара">Добавить в корзину</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="photo/m2.jpg" class="card-img-top" alt="Противень">
+                    <div class="card-body">
+                        <h5 class="card-title">Противень</h5>
+                        <p class="card-text">Идеально для выпечки.</p>
+                        <button class="btn btn-primary add-to-cart" data-name="Противень">Добавить в корзину</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="photo/m3.jpg" class="card-img-top" alt="Миксер">
+                    <div class="card-body">
+                        <h5 class="card-title">Миксер</h5>
+                        <p class="card-text">Смешивает любые ингредиенты.</p>
+                        <button class="btn btn-primary add-to-cart" data-name="Миксер">Добавить в корзину</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="photo/m4.jpg" class="card-img-top" alt="Тестомес">
+                    <div class="card-body">
+                        <h5 class="card-title">Тестомес</h5>
+                        <p class="card-text">Для идеального теста.</p>
+                        <button class="btn btn-primary add-to-cart" data-name="Тестомес">Добавить в корзину</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="photo/m5.jpg" class="card-img-top" alt="Терка">
+                    <div class="card-body">
+                        <h5 class="card-title">Терка</h5>
+                        <p class="card-text">Универсальная терка для сыра и овощей.</p>
+                        <button class="btn btn-primary add-to-cart" data-name="Терка">Добавить в корзину</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="photo/m6.jpg" class="card-img-top" alt="Лопатка">
+                    <div class="card-body">
+                        <h5 class="card-title">Силиконовая лопатка</h5>
+                        <p class="card-text">Для смешивания и перемешивания.</p>
+                        <button class="btn btn-primary add-to-cart" data-name="Силиконовая лопатка">Добавить в корзину</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="photo/m7.jpg" class="card-img-top" alt="Блендер">
+                    <div class="card-body">
+                        <h5 class="card-title">Блендер</h5>
+                        <p class="card-text">Для приготовления смузи и соусов.</p>
+                        <button class="btn btn-primary add-to-cart" data-name="Блендер">Добавить в корзину</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="photo/m8.jpg" class="card-img-top" alt="Мерные стаканы">
+                    <div class="card-body">
+                        <h5 class="card-title">Мерные стаканы</h5>
+                        <p class="card-text">Для точного измерения ингредиентов.</p>
+                        <button class="btn btn-primary add-to-cart" data-name="Мерные стаканы">Добавить в корзину</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="photo/m9.jpg" class="card-img-top" alt="Венчик">
+                    <div class="card-body">
+                        <h5 class="card-title">Венчик</h5>
+                        <p class="card-text">Для взбивания яиц и соусов.</p>
+                        <button class="btn btn-primary add-to-cart" data-name="Венчик">Добавить в корзину</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cart-container">
+            <h3>Корзина</h3>
+            <div id="cart-items">
+                <p>Корзина пуста.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let cart = [];
+
+        function updateCart() {
+            const cartItemsContainer = document.getElementById('cart-items');
+            cartItemsContainer.innerHTML = ''; 
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<p>Корзина пуста.</p>';
+                return;
+            }
+
+            cart.forEach(item => {
+                const cartItem = document.createElement('div');
+                cartItem.classList.add('cart-item');
+                cartItem.innerHTML = `
+                    <span>${item}</span>
+                    <button class="btn btn-danger btn-sm remove-item" data-name="${item}">Удалить</button>
+                `;
+                cartItemsContainer.appendChild(cartItem);
+            });
+
+            document.querySelectorAll('.remove-item').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const itemName = e.target.dataset.name;
+                    cart = cart.filter(item => item !== itemName);
+                    updateCart(); 
+                });
+            });
+        }
+
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const itemName = e.target.dataset.name;
+                cart.push(itemName);
+                updateCart();
+                alert(`"${itemName}" добавлен в корзину!`);
+            });
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
